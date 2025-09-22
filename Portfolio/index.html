@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rohit Pawar Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #1e293b;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+      border: 2px solid #a78bfa;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #a78bfa;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #a78bfa;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Home Section */
+    #home {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg,#0f172a,#1e293b);
+    }
+
+    #home h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    #home h3 {
+      font-size: 22px;
+      color: #22d3ee;
+    }
+
+    /* About Section */
+    #about p {
+      line-height: 1.6;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* Skills */
+    #skills div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #skills span {
+      background: #111827;
+      padding: 12px 20px;
+      border-radius: 8px;
+      transition: transform 0.3s, background 0.3s;
+      cursor: default;
+    }
+
+    #skills span:hover {
+      background: #a78bfa;
+      transform: translateY(-5px);
+    }
+
+    /* Cards (Journey, Experience, Hackathons, Certifications) */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: #1f2937;
+      border-radius: 12px;
+      padding: 15px;
+      width: 220px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(167,139,250,0.4);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card a:hover p {
+      color: #a78bfa;
+    }
+
+    /* Projects */
+    #projects .project-card {
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 12px;
+      width: 280px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    #projects img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    #projects .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(167,139,250,0.4);
+    }
+
+    #projects h3 {
+      color: #22d3ee;
+      margin-bottom: 10px;
+    }
+
+    #projects p {
+      color: #cbd5e1;
+    }
+
+    #projects div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* Contact */
+    #contact a {
+      margin: 10px;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    #contact a:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    #contact a.email { background: #a78bfa; }
+    #contact a.linkedin { background: #22d3ee; }
+    #contact a.github { background: #10b981; }
+
+    footer {
+      background: #111827;
+      padding: 20px;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      nav { display: none; }
+      #home h1 { font-size: 32px; }
+      #home h3 { font-size: 18px; }
+      #projects .project-card, .card { width: 90%; }
+      #projects img { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div style="display:flex; align-items:center;">
+      <img src="myimg.jpg" alt="Rohit Pawar">
+      <h2 style="color:#a78bfa; margin:0;">Rohit Pawar</h2>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#hackathons">Hackathons</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home">
+    <div>
+      <h1>Hi, I’m <span style="color:#a78bfa;">Rohit Pawar</span></h1>
+      <h3>Data Scientist | ML Engineer | Full-Stack Developer | AWS | Ethical Hacker</h3>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Passionate about leveraging data, AI, and technology to solve real-world problems. Skilled in machine learning, full-stack development, cloud computing, and cybersecurity.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" style="background:#1e293b;">
+    <h2>Skills</h2>
+    <div>
+      <span>Python</span>
+      <span>AWS</span>
+      <span>Machine Learning</span>
+      <span>Full-Stack Development</span>
+      <span>Data Science</span>
+      <span>Cybersecurity</span>
+      <span>Ethical Hacking</span>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section id="journey">
+    <h2>My Journey</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/60?text=Leader" alt="Team Leader">
+        <p>Team Leader of <strong>Binary Bosses</strong> Hackathon Team – led innovation projects and coordinated team members to achieve top solutions.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60?text=Innovation" alt="Innovation">
+        <p>Participated in multiple hackathons focusing on AI, ML, and IoT solutions.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60?text=Mentor" alt="Mentorship">
+        <p>Mentored juniors in coding, AI, and full-stack development through workshops and university programs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Internship Experience</h2>
+    <div class="card-container">
+
+      <!-- Content Writing Intern -->
+      <div class="card">
+        <img src="https://media.licdn.com/dms/image/v2/D562DAQHrB25pzV-5xg/profile-treasury-image-shrink_160_160/B56ZjLX18aHQAo-/0/1755758688902?e=1759161600&v=beta&t=zr527b3OPBzdGmtdnGRnxzLSHurSqx1xqgueQZJfS-Y" alt="Brainwave Matrix Solutions Logo">
+        <p><strong>Content Writing Intern</strong><br>
+           Brainwave Matrix Solutions · Internship<br>
+           Aug 2025 - Present · Maharashtra, India · Remote<br>
+           Assisted in creating and editing content across digital platforms. Developed skills in research, writing, and effective communication while collaborating remotely with the team.
+        </p>
+      </div>
+
+      <!-- Campus Ambassador Intern -->
+      <div class="card">
+        <img src="https://media.licdn.com/dms/image/v2/D562DAQGJ5XBJ0nq0HA/profile-treasury-image-shrink_160_160/B56ZiJx2VjG4Ak-/0/1754658203630?e=1759161600&v=beta&t=bV80MFDhRAl22EtrHSTo3wkgtHIycxTCiJ8icHnVf-I" alt="Basti Ki Pathshala Foundation Logo">
+        <p><strong>Campus Ambassador Intern</strong><br>
+           Basti Ki Pathshala Foundation · Internship<br>
+           Aug 2025 · India · Remote<br>
+           Promoted initiatives within the college community. Referred followers to WhatsApp community channel. Achieved 150+ followers and received LOR, appreciation, and completion certificate.
+        </p>
+      </div>
+
+      <!-- Data Science Intern -->
+      <div class="card">
+        <img src="https://media.licdn.com/dms/image/v2/D562DAQGi0yemNudzYQ/profile-treasury-image-shrink_160_160/B56ZfGQRVqG0Ao-/0/1751377845254?e=1759161600&v=beta&t=46YYJkCiPEJdLRuohn7UpteoMVPV2HBVelJR8muYe-U" alt="YHills Logo">
+        <p><strong>Data Science Intern</strong><br>
+           YHills · Internship<br>
+           Jan 2025 - Mar 2025 · Online · Remote<br>
+           Learned Python programming for data analysis, ML model development, data visualization, and solving industry-inspired projects. Built a strong foundation in AI and Machine Learning.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div>
+      <div class="project-card">
+        <img src="hydro.png" alt="Hydrophonic Farming">
+        <h3>Hydrophonic Farming</h3>
+        <p>Smart farming system using hydroponics and IoT.</p>
+      </div>
+      <div class="project-card">
+        <img src="hoetl.png" alt="Hotel Management System">
+        <h3>Hotel Management System</h3>
+        <p>Web app for hotel reservations and management.</p>
+      </div>
+      <div class="project-card">
+        <img src="secure.png" alt="SecureHer">
+        <h3>SecureHer</h3>
+        <p>Women’s safety application with real-time alerts.</p>
+      </div>
+      <div class="project-card">
+        <img src="medi.png" alt="Medi Web">
+        <h3>Medi Web</h3>
+        <p>Healthcare platform for online consultations.</p>
+      </div>
+      <div class="project-card">
+        <img src="landreco.png" alt="Land Record System">
+        <h3>Land Record System</h3>
+        <p>Property registry system with secure data access.</p>
+      </div>
+      <div class="project-card">
+        <img src="iot.png" alt="IoT Fire Extinction">
+        <h3>IoT Fire Extinction</h3>
+        <p>IoT-powered fire detection and prevention.</p>
+      </div>
+      <div class="project-card">
+        <img src="atten.png" alt="Attendance Management">
+        <h3>Attendance Management</h3>
+        <p>Automated student attendance system.</p>
+      </div>
+      <div class="project-card">
+        <img src="atten.png" alt="Face Mask Detection">
+        <h3>Face Mask Detection</h3>
+        <p>ML model for real-time face mask detection.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hackathons -->
+  <section id="hackathons" style="background:#1e293b;">
+    <h2>Hackathons</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/60?text=Tech" alt="Tech Event">
+        <p>Tech Event – Sandip University</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60?text=Gov" alt="Guru Govind Singh Hackathon">
+        <p>Guru Govind Singh Hackathon</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60?text=KBT" alt="KBT Innovation">
+        <p>KBT Innovation</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60?text=MIT" alt="MIT ADT Hackathon">
+        <p>MIT ADT Hackathon</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60?text=Hyk" alt="Hykronyx Nagpur">
+        <p>Hykronyx Nagpur</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/60?text=Sun" alt="Sun Hacks">
+        <p>Sun Hacks</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certs">
+    <h2>Licenses & Certifications</h2>
+    <div class="card-container">
+
+      <div class="card">
+        <a href="https://tryhackme.com/rp035806/badges/raffle-royalty?utm_source=linkedin&utm_medium=social&utm_campaign=social_share&utm_content=badge" target="_blank">
+          <img src="https://via.placeholder.com/60?text=TH" alt="TryHackMe Logo">
+          <p>TryHackMe – Raffle Royalty 2025</p>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="https://unstop.com/certificate-preview/566ab6e9-be4d-4308-87af-4eb460ec4f15?utm_campaign=site-emails" target="_blank">
+          <img src="https://via.placeholder.com/60?text=Unstop" alt="Unstop Logo">
+          <p>Certificate of Participation – HacKronyX</p>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="https://cert.diceid.com/cid/v8K7VjgIPd" target="_blank">
+          <img src="https://via.placeholder.com/60?text=DS" alt="YHills Logo">
+          <p>Data Science – YHills</p>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="https://drive.google.com/file/d/1_m4lOtkpshmmqjwYO-dvAnKxGZkRlLm8/view?usp=drivesdk" target="_blank">
+          <img src="https://via.placeholder.com/60?text=E-Cell" alt="E-Cell IIT Madras Logo">
+          <p>Introduction to Programming Using Python</p>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="https://drive.google.com/file/d/1_pzQPZQ_lCaOFUXWVXCrdkczVBCKqa09/view" target="_blank">
+          <img src="https://via.placeholder.com/60?text=AI" alt="Infosys Springboard Logo">
+          <p>Artificial Intelligence – Infosys Springboard</p>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="https://drive.google.com/file/d/1JONyemzr4DOgoRy95L_Cp8AZIQ_HuWl/view" target="_blank">
+          <img src="https://via.placeholder.com/60?text=CSS" alt="Infosys Springboard Logo">
+          <p>Cascading Stylesheet – Infosys Springboard</p>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="https://drive.google.com/file/d/1WCkwhPUm7jY7NAS7Qg27j__KImuz7o3C/view?usp=drivesdk" target="_blank">
+          <img src="https://via.placeholder.com/60?text=KBT" alt="KBT Innovation Logo">
+          <p>KBT Innovation – MVP's COE MBA Dept</p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background:#1e293b;">
+    <h2>Contact Me</h2>
+    <p>Ready to bring data-driven insights to your next project? Let's discuss how my expertise in AI, machine learning, and data analytics can drive innovation for your organization.</p>
+    <div style="margin-top:20px;">
+      <a href="mailto:pawarrohit.x@gmail.com" class="email">Email</a>
+      <a href="https://www.linkedin.com/in/rohit-pawar-54132a246/" target="_blank" class="linkedin">LinkedIn</a>
+      <a href="https://github.com/rohitsingh7218" target="_blank" class="github">GitHub</a>
+    </div>
+    <p style="margin-top:10px;">Location: Nashik, Maharashtra | Status: Open to Opportunities</p>
+  </section>
+
+  <footer>
+    © 2025 Rohit Pawar. All rights reserved.
+  </footer>
+
+</body>
+</html>
