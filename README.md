@@ -31,6 +31,9 @@ You can view my portfolio online using GitHub Pages:
 - Git & GitHub
 
 ## Contact
+added mail and some conact details 
+updated the linkdin accound 
+updated the github account link
 
 - Email: pawarrohit.x@gmail.com  
 - LinkedIn: [https://www.linkedin.com/in/rohit-pawar-54132a246/](https://www.linkedin.com/in/rohit-pawar-54132a246/)  
