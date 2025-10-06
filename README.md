@@ -30,6 +30,12 @@ You can view my portfolio online using GitHub Pages:
 - Responsive Design
 - Git & GitHub
 
+##added certificate in the portfolio 
+
+##added the smart india hackathon (Internal hackathon at Sandip University) certificate added 
+
+##added all the my achievements 
+
 ## Contact
 added mail and some conact details 
 updated the linkdin accound 
